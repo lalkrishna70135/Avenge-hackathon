@@ -7,6 +7,6 @@ data/sarvam/
 data/catalog/
 .pytest_cache/
 *.pyc
-# held back from public repo: employer call data / proprietary prompt (remove to include)
+# input data is supplied by the user, see data/README.md
 data/Call_Logs_Hackathon.csv
 data/base_prompt.txt
