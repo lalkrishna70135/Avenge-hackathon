@@ -1,0 +1,18 @@
+experiment_id: exp-win
+title: "B wins: skip optional spec probing, go straight to the live-seller pitch"
+salt: exp-win-7f3a
+share_b: 0.10
+mde_pp: 0.03
+base_prompt_file: data/base_prompt.txt
+variant_a:
+  name: "A (control)"
+variant_b:
+  name: "B: seller pitch after one spec attempt"
+  anchor: "Collection Control - Applies to Every Handler and Phase"
+  window: 13
+  prompt_file: scenarios/variants/exp-win.txt
+  diff: "In Collection Control, lower the total ask limits to quantity = 1 and each specification = 1; once those single attempts are used, go straight to the live seller pitch."
+true_effect:
+  success_pp: 0.05
+  duration_mult: 1.0
+seed: 11

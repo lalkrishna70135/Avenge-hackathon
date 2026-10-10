@@ -1,0 +1,32 @@
+<section id="engine" data-transition="fade" style="background:#F7F6F2;color:#14213D;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;gap:48px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-size:26px;font-weight:600;color:#E07A1F;letter-spacing:3px;text-transform:uppercase">Layer 3 · The A/B engine</p>
+<h2 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:64px;font-weight:700;line-height:1.1">Rules fixed before the test starts, applied automatically</h2>
+</div>
+<div style="display:flex;gap:48px;flex:1">
+<div style="width:760px;background:#FFFFFF;border:1px solid #DDD9CF;border-radius:16px;padding:40px;display:flex;flex-direction:column;gap:18px">
+<h3 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:36px;font-weight:700">Method</h3>
+<ul style="font-size:28px;line-height:1.35;color:#2D3748;display:flex;flex-direction:column;gap:14px">
+<li><b>Routing:</b> sha256(salt:buyer) mod 10,000, so a buyer always hears the same prompt</li>
+<li><b>Primary:</b> lead created per buyer within 2 h of their first call; any disposition can be the goal</li>
+<li><b>5 looks:</b> O'Brien-Fleming win line, Pocock harm line</li>
+<li><b>Guardrail:</b> call duration B/A under +15%; hard stop at +30%</li>
+<li><b>Plan:</b> 24,581 buyers, 2,459 on B, detects +3 points</li>
+</ul>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:18px">
+<h3 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:36px;font-weight:700">Decision rules</h3>
+<table style="font-size:27px;color:#2D3748">
+<tr style="background:#14213D"><th style="width:30%;color:#F7F6F2">Primary</th><th style="width:30%;color:#F7F6F2">Guardrail</th><th style="width:40%;color:#F7F6F2">Action</th></tr>
+<tr style="background:#FFFFFF"><td>Harm line</td><td>any</td><td><b>Stop → A</b></td></tr>
+<tr style="background:#F7F6F2"><td>any</td><td>Over +30%</td><td><b>Stop → A</b></td></tr>
+<tr style="background:#FFFFFF"><td>Win line</td><td>Under +15%</td><td><b>Promote B</b></td></tr>
+<tr style="background:#F7F6F2"><td>Win line</td><td>Not yet shown</td><td>Keep running</td></tr>
+<tr style="background:#FFFFFF"><td>Win line</td><td>Over +15%</td><td>Hold: a named approver decides</td></tr>
+<tr style="background:#F7F6F2"><td>Neither by end</td><td></td><td>Inconclusive → A</td></tr>
+<tr style="background:#FFFFFF"><td>Split mismatch</td><td></td><td>Invalid → A</td></tr>
+</table>
+</div>
+</div>
+<aside>Every experiment config is immutable and hashed together with the exact prompt text. The router is a deterministic hash, so assignment is sticky and needs no lookup. The primary goal defaults to lead created, but any set of dispositions can be chosen as the goal. Each buyer is scored on their calls within two hours of their first call and enters a look only once that window has closed, so an outcome the engine has seen never changes between looks; 81 percent of real repeat calls come within an hour. The test is group-sequential: five looks planned in advance, with boundaries from alpha spending, so peeking does not inflate false wins. The primary decides and duration can only veto: a win with calls more than 15 percent longer is held, B goes to zero, and a named approver promotes or rejects it, logged with their name and reason. Every look, decision and routing change goes to an append-only log with the evidence and the rule that fired.</aside>
+</section>

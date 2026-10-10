@@ -1,0 +1,16 @@
+experiment_id: exp-hold
+title: "Primary wins but calls run longer: held for a named approver"
+salt: exp-hold-2a6d
+share_b: 0.10
+mde_pp: 0.03
+base_prompt_file: data/base_prompt.txt
+variant_a:
+  name: "A (control)"
+variant_b:
+  name: "B: read back the requirement before transfer"
+  anchor: "FINALISATION"
+  diff: "Before transferring to the live seller, read back the captured product, quantity and specifications and ask the buyer to confirm them."
+true_effect:
+  success_pp: 0.05
+  duration_mult: 1.25
+seed: 14

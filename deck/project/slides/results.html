@@ -1,0 +1,20 @@
+<section id="results" data-transition="fade" style="background:#14213D;color:#F7F6F2;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;gap:44px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-size:26px;font-weight:600;color:#E07A1F;letter-spacing:3px;text-transform:uppercase">Results</p>
+<h2 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:64px;font-weight:700;line-height:1.1;color:#F7F6F2">Given a known truth, the engine reaches the right call</h2>
+</div>
+<table style="font-size:28px;color:#14213D;width:1664px">
+<tr style="background:#E07A1F"><th style="width:42%;color:#14213D">Variant B</th><th style="width:26%;color:#14213D">True effect</th><th style="width:32%;color:#14213D">Engine decision</th></tr>
+<tr style="background:#F7F6F2"><td>One ask per spec, then the seller</td><td>+5 points of leads</td><td><b>Promoted</b> at look 3</td></tr>
+<tr style="background:#E9ECF2"><td>Re-ask 3 specs and quantity</td><td>−6 points, 1.3× longer</td><td><b>Stopped</b> at look 1</td></tr>
+<tr style="background:#F7F6F2"><td>Warmer greeting only</td><td>none</td><td><b>Inconclusive</b>, stays on A</td></tr>
+<tr style="background:#E9ECF2"><td>Read the requirement back</td><td>+5 points, 1.25× longer</td><td><b>Held</b> for a named approver</td></tr>
+</table>
+<div style="display:flex;gap:32px;flex:1;align-items:end">
+<div style="flex:1;display:flex;flex-direction:column;gap:6px"><p style="font-family:'Space Grotesk', Arial, sans-serif;font-size:80px;font-weight:700;color:#E07A1F">93%</p><p style="font-size:26px;color:#BFD0E6">of 1,000 reruns catch the winner: 77% promoted, 15% held</p></div>
+<div style="flex:1;display:flex;flex-direction:column;gap:6px"><p style="font-family:'Space Grotesk', Arial, sans-serif;font-size:80px;font-weight:700;color:#E07A1F">99%</p><p style="font-size:26px;color:#BFD0E6">of reruns stop the harmful change</p></div>
+<div style="flex:1;display:flex;flex-direction:column;gap:6px"><p style="font-family:'Space Grotesk', Arial, sans-serif;font-size:80px;font-weight:700;color:#E07A1F">1.7%</p><p style="font-size:26px;color:#BFD0E6">false wins when B does nothing (target 2.5%)</p></div>
+<div style="flex:1;display:flex;flex-direction:column;gap:6px"><p style="font-family:'Space Grotesk', Arial, sans-serif;font-size:80px;font-weight:700;color:#E07A1F">5.0%</p><p style="font-size:26px;color:#BFD0E6">false harm-stops (target 5%), down from 7.1%</p></div>
+</div>
+<aside>Each scenario's simulated calls are bootstrapped from the real call log, with a known effect injected into variant B on connected calls only, so we can check the engine against a known answer. The winner was promoted at the third look, the harmful change stopped at the first, and the no-effect change correctly ended inconclusive. The fourth change wins on leads but makes calls 25 percent longer: it crossed the win line at look four, the engine kept running until the duration evidence was clear, then held it at zero percent for a named approver, because duration can veto a win but never decide one. Rerunning each scenario a thousand times with fresh data gives the bottom row. Of the reruns where B truly wins, 77 percent are promoted automatically and 15 percent are held because the longer calls of B's extra leads kept the duration guardrail from clearing in time. We found and fixed one statistical problem: repeat callers' outcomes could change between looks, which pushed false harm-stops to 7.1 percent; scoring each buyer on a fixed two-hour window from their first call brings it to 5.0 percent, and false wins to 1.7 percent.</aside>
+</section>

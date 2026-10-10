@@ -1,0 +1,28 @@
+<section id="pilot" data-transition="fade" style="background:#F7F6F2;color:#14213D;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;gap:36px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-size:26px;font-weight:600;color:#E07A1F;letter-spacing:3px;text-transform:uppercase">Layer 2 · Simulated pilot</p>
+<h2 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:64px;font-weight:700;line-height:1.1">Simulation measures behaviour, not leads</h2>
+</div>
+<table style="font-size:26px;color:#14213D;width:1664px">
+<tr style="background:#14213D"><th style="width:25%;color:#F7F6F2">60 buyers per change</th><th style="width:15%;color:#F7F6F2">Leads A → B</th><th style="width:20%;color:#F7F6F2">Lift, 95% CI</th><th style="width:14%;color:#F7F6F2">Asks per call</th><th style="width:13%;color:#F7F6F2">Calls re-asking</th><th style="width:13%;color:#F7F6F2">Call length</th></tr>
+<tr style="background:#FFFFFF"><td>One ask per spec (win)</td><td>34% → 40%</td><td>+6 pp [−5, +17]</td><td>0.8 → 1.0</td><td>5% → 5%</td><td>×1.02</td></tr>
+<tr style="background:#F7F6F2"><td><b>Interrogate first (harm)</b></td><td>34% → 28%</td><td>−6 pp [−17, +5]</td><td><b>0.8 → 1.7</b></td><td><b>5% → 22%</b></td><td><b>×1.17</b></td></tr>
+<tr style="background:#FFFFFF"><td>Warmer greeting (null)</td><td>34% → 40%</td><td>+6 pp [−4, +17]</td><td>0.8 → 1.1</td><td>5% → 5%</td><td>×1.09</td></tr>
+<tr style="background:#E9ECF2"><td><i>A/A: no change at all</i></td><td>28% → 40%</td><td><i>+12 pp [−3, +27]</i></td><td>0.7 → 0.9</td><td>2% → 8%</td><td>×0.98</td></tr>
+</table>
+<div style="display:flex;gap:32px;flex:1">
+<div style="flex:1;background:#FFFFFF;border:1px solid #DDD9CF;border-radius:16px;padding:32px;display:flex;flex-direction:column;gap:12px">
+<h3 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:32px;font-weight:700">Behaviour is clear</h3>
+<p style="font-size:26px;line-height:1.35;color:#4A5568">Interrogating re-asks in 4× as many calls, runs 17% longer and loses more buyers (hang-ups 52% → 63%).</p>
+</div>
+<div style="flex:1;background:#FFFFFF;border:1px solid #DDD9CF;border-radius:16px;padding:32px;display:flex;flex-direction:column;gap:12px">
+<h3 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:32px;font-weight:700">Leads are within noise</h3>
+<p style="font-size:26px;line-height:1.35;color:#4A5568">Prompt A against itself moved leads 12 points. Measuring 5 points takes thousands of buyers.</p>
+</div>
+<div style="flex:1;background:#14213D;border-radius:16px;padding:32px;display:flex;flex-direction:column;gap:12px">
+<h3 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:32px;font-weight:700;color:#F7F6F2">Pilot → A/B engine</h3>
+<p style="font-size:26px;line-height:1.35;color:#BFD0E6">If the win estimate is right (+4.8 pp at scale), the engine promotes it at look 4. Over 1,000 reruns it catches it 91% of the time: 68% promoted, 23% held.</p>
+</div>
+</div>
+<aside>Layer two in numbers. Sixty buyer personas, each modelled on a real recorded call, talked to the VANI bot on prompt A and on each changed prompt B: 300 simulated calls, judged blind against the Call Quality Matrix. Like live VANI, the bot is given each product's quantity units and its two main spec fields, from IndiaMART's category data; 50 of the 60 products matched a category. Without those fields the bot never asked for quantity or specs, so this was the first thing we fixed. We also ran an A/A check: each persona talked to prompt A a second time. With no change at all, leads moved 12 points, so with 60 buyers the lead estimates are within noise; the control for the three changes pools both A calls per persona. What simulation does show clearly is behaviour: the interrogation prompt re-asks in 22 percent of calls versus 5, asks twice as often, makes calls 17 percent longer with a confidence interval of 8 to 26 percent, and loses more buyers to hang-ups. That is the harm we then test for at scale. The win estimate, carried to the real lead rate as an odds ratio, becomes the fifth experiment on the A/B engine.</aside>
+</section>

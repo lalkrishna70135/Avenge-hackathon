@@ -1,0 +1,26 @@
+<section id="demo" data-transition="fade" style="background:#F7F6F2;color:#14213D;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;gap:48px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-size:26px;font-weight:600;color:#E07A1F;letter-spacing:3px;text-transform:uppercase">Live demo</p>
+<h2 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:64px;font-weight:700;line-height:1.1">Call the bot yourself and watch the router pick your prompt</h2>
+</div>
+<div style="display:flex;gap:16px;align-items:center">
+<div style="flex:1;background:#14213D;border-radius:14px;padding:28px"><p style="font-size:28px;line-height:1.3;color:#F7F6F2"><b>Enter a buyer ID</b></p></div>
+<x-shape kind="arrow-right" style="background:#E07A1F;width:44px;height:24px"></x-shape>
+<div style="flex:1;background:#14213D;border-radius:14px;padding:28px"><p style="font-size:28px;line-height:1.3;color:#F7F6F2"><b>Hash picks A or B</b></p></div>
+<x-shape kind="arrow-right" style="background:#E07A1F;width:44px;height:24px"></x-shape>
+<div style="flex:1;background:#14213D;border-radius:14px;padding:28px"><p style="font-size:28px;line-height:1.3;color:#F7F6F2"><b>Speak as the buyer</b></p></div>
+<x-shape kind="arrow-right" style="background:#E07A1F;width:44px;height:24px"></x-shape>
+<div style="flex:1;background:#14213D;border-radius:14px;padding:28px"><p style="font-size:28px;line-height:1.3;color:#F7F6F2"><b>Bot answers aloud</b></p></div>
+<x-shape kind="arrow-right" style="background:#E07A1F;width:44px;height:24px"></x-shape>
+<div style="flex:1;background:#E07A1F;border-radius:14px;padding:28px"><p style="font-size:28px;line-height:1.3;color:#14213D"><b>Audit the call</b></p></div>
+</div>
+<div style="display:grid;grid-template-columns:repeat(3, 1fr);gap:24px;flex:1">
+<div style="background:#FFFFFF;border:1px solid #DDD9CF;border-radius:16px;padding:32px;display:flex;flex-direction:column;gap:10px"><h3 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:34px;font-weight:700">Real calls</h3><p style="font-size:27px;line-height:1.35;color:#4A5568">Play a real recording beside its transcript and quality audit</p></div>
+<div style="background:#FFFFFF;border:1px solid #DDD9CF;border-radius:16px;padding:32px;display:flex;flex-direction:column;gap:10px"><h3 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:34px;font-weight:700">Prompt lab</h3><p style="font-size:27px;line-height:1.35;color:#4A5568">The same buyer persona talking to bot A and bot B, side by side</p></div>
+<div style="background:#FFFFFF;border:1px solid #DDD9CF;border-radius:16px;padding:32px;display:flex;flex-direction:column;gap:10px"><h3 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:34px;font-weight:700">Experiments</h3><p style="font-size:27px;line-height:1.35;color:#4A5568">Z against the boundaries, rollout, the decision log, and approving a held win</p></div>
+<div style="background:#FFFFFF;border:1px solid #DDD9CF;border-radius:16px;padding:32px;display:flex;flex-direction:column;gap:10px"><h3 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:34px;font-weight:700">Simulated calls</h3><p style="font-size:27px;line-height:1.35;color:#4A5568">Replay hour by hour; trace any call to its real log row</p></div>
+<div style="background:#FFFFFF;border:1px solid #DDD9CF;border-radius:16px;padding:32px;display:flex;flex-direction:column;gap:10px"><h3 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:34px;font-weight:700">Playground</h3><p style="font-size:27px;line-height:1.35;color:#4A5568">Set any true effect and see whether the engine finds it</p></div>
+<div style="background:#FFFFFF;border:1px solid #DDD9CF;border-radius:16px;padding:32px;display:flex;flex-direction:column;gap:10px"><h3 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:34px;font-weight:700">Call log</h3><p style="font-size:27px;line-height:1.35;color:#4A5568">The 1,000 raw rows and how each was classified</p></div>
+</div>
+<aside>The dashboard is a Streamlit app with ten tabs. The Live call tab is the end-to-end moment: a buyer ID goes through the same hash router as live traffic, Sarvam speech-to-text hears you, the VANI bot answers with prompt A or B, and Sarvam text-to-speech speaks the reply. The bot is given the product's real IndiaMART spec fields, so for TMT steel bars it asks tonnage, grade and diameter. At the end, the same blind judge audits the call. On the Experiments tab, a held win waits for a named approver, and their decision joins the log. Everything else replays cached results, so it works offline.</aside>
+</section>

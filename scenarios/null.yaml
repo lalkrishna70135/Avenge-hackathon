@@ -1,0 +1,18 @@
+experiment_id: exp-null
+title: "Inconclusive: warmer reply to buyer greetings"
+salt: exp-null-4b8e
+share_b: 0.10
+mde_pp: 0.03
+base_prompt_file: data/base_prompt.txt
+variant_a:
+  name: "A (control)"
+variant_b:
+  name: "B: warmer greeting"
+  anchor: "GREETING: opening greeting"
+  window: 1
+  prompt_file: scenarios/variants/exp-null.txt
+  diff: "When the buyer greets (GREETING intent), return a warm greeting and thank them for calling IndiaMART before continuing the product confirmation flow."
+true_effect:
+  success_pp: 0.0
+  duration_mult: 1.0
+seed: 13

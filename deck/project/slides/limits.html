@@ -1,0 +1,27 @@
+<section id="limits" data-transition="fade" style="background:#F7F6F2;color:#14213D;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;gap:48px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-size:26px;font-weight:600;color:#E07A1F;letter-spacing:3px;text-transform:uppercase">Limits and next steps</p>
+<h2 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:64px;font-weight:700;line-height:1.1">What we would do with one more week</h2>
+</div>
+<div style="display:flex;gap:40px;flex:1">
+<div style="flex:1;background:#FFFFFF;border:1px solid #DDD9CF;border-radius:16px;padding:44px;display:flex;flex-direction:column;gap:20px">
+<h3 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:38px;font-weight:700">Honest limits today</h3>
+<ul style="font-size:28px;line-height:1.35;color:#2D3748;display:flex;flex-direction:column;gap:14px">
+<li>Simulated buyers are models seeded from real calls; at 60 per change, lead effects sit inside the noise</li>
+<li>Duration is a minute-resolution timestamp proxy, so the guardrail margin is 15%</li>
+<li>Audit verdicts come from a model, not human QA</li>
+<li>The simulated bot runs a condensed prompt, with spec fields from a category match</li>
+</ul>
+</div>
+<div style="flex:1;background:#14213D;border-radius:16px;padding:44px;display:flex;flex-direction:column;gap:20px">
+<h3 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:38px;font-weight:700;color:#F7F6F2">Next</h3>
+<ul style="font-size:28px;line-height:1.35;color:#BFD0E6;display:flex;flex-direction:column;gap:14px">
+<li>Calibrate simulated buyers against real outcomes, then scale the pilot</li>
+<li>Use real talk time from call records for the duration guardrail</li>
+<li>Check the audit against human QA labels on a sample</li>
+<li>Test more than two variants at once (A/B/n)</li>
+</ul>
+</div>
+</div>
+<aside>We are explicit about what is not finished. The simulated pilot ran in full: sixty personas per change plus an A/A check, which showed that with sixty buyers, lead effects are within noise, so simulation is for behaviour and the live A/B test is for leads. The statistical problem we found ourselves, repeat callers pushing false harm-stops to 7.1 percent, is fixed by scoring each buyer on a fixed window from their first call: now 5.0 percent. The simulated bot runs a condensed version of the 163 KB prompt with the changed sections verbatim, and gets spec fields by matching the product to IndiaMART's category data; 10 of 60 products had no match. Everything in the brief, config, routing, simulation, sequential statistics, decisions, rollout, approvals and the log, is implemented and tested: 66 automated tests pass.</aside>
+</section>

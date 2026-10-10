@@ -1,0 +1,23 @@
+<section id="findings" data-transition="fade" style="background:#F7F6F2;color:#14213D;font-family:'IBM Plex Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;gap:48px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-size:26px;font-weight:600;color:#E07A1F;letter-spacing:3px;text-transform:uppercase">Layer 1 · Real-call audit</p>
+<h2 style="font-family:'Space Grotesk', Arial, sans-serif;font-size:64px;font-weight:700;line-height:1.1">A third of real calls fail VANI's own quality bar</h2>
+</div>
+<div style="display:flex;gap:64px;flex:1">
+<div style="width:520px;display:flex;flex-direction:column;gap:28px">
+<div style="display:flex;flex-direction:column;gap:4px"><p style="font-family:'Space Grotesk', Arial, sans-serif;font-size:72px;font-weight:700">63%</p><p style="font-size:28px;color:#4A5568">of 591 audited calls created a lead</p></div>
+<div style="display:flex;flex-direction:column;gap:4px"><p style="font-family:'Space Grotesk', Arial, sans-serif;font-size:72px;font-weight:700;color:#E07A1F">35%</p><p style="font-size:28px;color:#4A5568">judged Fatal overall</p></div>
+<div style="display:flex;flex-direction:column;gap:4px"><p style="font-family:'Space Grotesk', Arial, sans-serif;font-size:72px;font-weight:700">112</p><p style="font-size:28px;color:#4A5568">calls with dead air over 5 s, measured from timestamps</p></div>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:22px">
+<p style="font-size:28px;font-weight:600">Most common failures, % of audited calls</p>
+<div style="display:flex;flex-direction:column;gap:6px"><p style="font-size:26px">Spec missed opportunity · 15% fatal, 21% non-fatal</p><div style="display:flex"><div style="width:304px;height:28px;background:#14213D"></div><div style="width:426px;height:28px;background:#E07A1F"></div></div></div>
+<div style="display:flex;flex-direction:column;gap:6px"><p style="font-size:26px">Quantity probing error · 3% fatal, 16% non-fatal</p><div style="display:flex"><div style="width:64px;height:28px;background:#14213D"></div><div style="width:322px;height:28px;background:#E07A1F"></div></div></div>
+<div style="display:flex;flex-direction:column;gap:6px"><p style="font-size:26px">Looping behaviour · 2% fatal, 13% non-fatal</p><div style="display:flex"><div style="width:44px;height:28px;background:#14213D"></div><div style="width:258px;height:28px;background:#E07A1F"></div></div></div>
+<div style="display:flex;flex-direction:column;gap:6px"><p style="font-size:26px">Outcome accuracy · 11% fatal, 3% non-fatal</p><div style="display:flex"><div style="width:216px;height:28px;background:#14213D"></div><div style="width:60px;height:28px;background:#E07A1F"></div></div></div>
+<div style="display:flex;flex-direction:column;gap:6px"><p style="font-size:26px">Quantity missed opportunity · 8% fatal, 5% non-fatal</p><div style="display:flex"><div style="width:156px;height:28px;background:#14213D"></div><div style="width:108px;height:28px;background:#E07A1F"></div></div></div>
+<p style="font-size:24px;color:#4A5568">Dark = Fatal, orange = Non-fatal</p>
+</div>
+</div>
+<aside>Sarvam transcribed the recordings with bot and buyer separated; sarvam-105b then audited each call against the 18-parameter VANI Call Quality Matrix, without seeing anything but the transcript. The biggest failures are about collecting specifications and quantity: missing specs the buyer gave, or probing badly. That is exactly the area our three test prompt changes adjust, so the audit tells you which changes are worth testing. These are model judgements on 591 calls, not human QA labels.</aside>
+</section>

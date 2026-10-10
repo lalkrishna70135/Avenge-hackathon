@@ -1,0 +1,18 @@
+experiment_id: exp-harm
+title: "B is clearly worse: collect three specs and quantity before any transfer"
+salt: exp-harm-91c2
+share_b: 0.10
+mde_pp: 0.03
+base_prompt_file: data/base_prompt.txt
+variant_a:
+  name: "A (control)"
+variant_b:
+  name: "B: full spec interrogation first"
+  anchor: "Adaptive Follow-up — STRICT MAX 3 ATTEMPTS PER SLOT"
+  window: 16
+  prompt_file: scenarios/variants/exp-harm.txt
+  diff: "Before creating a lead or offering a seller, always collect quantity, unit and three specifications, re-asking each until the buyer answers."
+true_effect:
+  success_pp: -0.06
+  duration_mult: 1.30
+seed: 12
